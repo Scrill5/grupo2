@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <title>Grupo FIO 102 - Acerca de</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #151515;
+            color: #f9fafb;
+        }
+        .cyberpunk-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #00bfff;
+            text-shadow: 0 0 10px #00bfff44, 0 0 20px #00bfff3b, 0 0 30px #00bfff44, 0 0 40px #007acc33;
+            transition: text-shadow 0.3s ease;
+        }
+
+        .cyberpunk-title:hover {
+            text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 50px #007acc, 0 0 70px #007acc;
+        }
+        h1, h2 {
+            color: #00bfff; /* Azul cibernético */
+        }
+
+        a {
+            font-family: 'Orbitron', sans-serif;
+            color: #00bfff;
+            background-color: transparent;
+            border-radius: 8px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00bfff44, 0 0 20px #00bfff3b, 0 0 30px #00bfff44, 0 0 40px #007acc33;
+            transition: text-shadow 0.3s ease;
+        }
+
+        a:hover {
+            color: #5eafff;
+            text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 50px #007acc, 0 0 70px #007acc;
+        }
+
+        header {
+            background-color: rgb(39, 39, 39);
+            border-bottom: 1px solid #007acc;
+        }
+
+        footer {
+            background-color: rgb(39, 39, 39);
+            border-top: 1px solid #007acc;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="shadow-md fixed top-0 left-0 w-full z-10">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold cyberpunk-title">Grupo FIO 102</h1>
+            <nav>
+                <a href="index.html" class="mx-2">Inicio</a>
+                <a href="horario.html" class="mx-2">Horario</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6 mt-24">
+        <h2 class="text-2xl font-semibold mb-4">Acerca de</h2>
+        <p>El Grupo FIO 102 es un colectivo de estudiantes dedicados a mejorar la experiencia universitaria y promover actividades académicas y culturales.</p>
+    </main>
+
+    <footer class="shadow mt-8 p-4 text-center">
+        <p>&copy; 2024 Grupo FIO 102. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
