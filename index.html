@@ -58,15 +58,18 @@
         .custom-nav {
             background-color: rgb(39, 39, 39);
             border-bottom: 1px solid #007acc;
+            padding: 0.5rem; /* Reducir padding */
         }
 
         .custom-article {
             background-color: rgb(39, 39, 39);
         }
+
         .logo {
-            width: 5em;
-            height: 5em;
+            width: 4em; /* Ajustar tamaño */
+            height: 4em; /* Ajustar tamaño */
         }
+
         .imgarticle {
             width: 100%;
             max-width: 30em;
@@ -91,8 +94,8 @@
 <body>
 
     <header class="custom-nav shadow-md fixed top-0 left-0 w-full z-10">
-        <div class="container mx-auto p-4 flex justify-between items-center">
-            <img src="dragon4.webp" alt="Logo" class="h-10 logo">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="dragon4.webp" alt="Logo" class="logo">
             <h1 class="cyberpunk-title">Grupo 02</h1>
             <button id="menu-toggle" class="menu-toggle text-blue-500 focus:outline-none md:hidden">
                 <!-- Ícono del menú hamburguesa -->
@@ -100,7 +103,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
-            <nav id="navbar" class="flex items-center space-x-4">
+            <nav id="navbar" class="flex items-center space-x-2"> <!-- Reducir espacio -->
                 <a href="horario.html" class="button nav-link">Horario</a>
                 <a href="acerca.html" class="button nav-link">Acerca de</a>
             </nav>
