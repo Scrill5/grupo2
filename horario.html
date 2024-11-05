@@ -57,7 +57,6 @@
             background-color: rgb(39, 39, 39);
             border: 1px solid #007acc;
             width: 100%;
-            overflow-x: auto; /* Permite desplazamiento horizontal */
         }
 
         th, td {
@@ -81,20 +80,6 @@
         .aula {
             color: #00bfff;
         }
-
-        /* Estilos para el menú hamburguesa */
-        .nav-link {
-            display: none; /* Ocultar los enlaces en móvil inicialmente */
-        }
-
-        @media (min-width: 640px) {
-            .nav-link {
-                display: block; /* Mostrar enlaces en pantallas más grandes */
-            }
-            .menu-toggle {
-                display: none; /* Ocultar el botón de menú en pantallas más grandes */
-            }
-        }
     </style>
 </head>
 <body>
@@ -102,96 +87,76 @@
     <header class="shadow-md fixed top-0 left-0 w-full z-10">
         <div class="container mx-auto p-4 flex justify-between items-center">
             <h1 class="cyberpunk-title">Grupo FIO 102</h1>
-            <button id="menu-toggle" class="menu-toggle text-blue-500 focus:outline-none md:hidden">
-                <!-- Ícono del menú hamburguesa -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-            <nav class="flex items-center space-x-4">
-                <a href="index.html" class="mx-2 nav-link">Inicio</a>
-                <a href="acerca.html" class="mx-2 nav-link">Acerca de</a>
+            <nav>
+                <a href="index.html" class="mx-2">Inicio</a>
+                <a href="acerca.html" class="mx-2">Acerca de</a>
+                <a href="estudiantes.html" class="button nav-link">Estudiantes</a> <!-- Nueva pestaña añadida -->
+
             </nav>
         </div>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden flex flex-col bg-gray-800 p-4 absolute w-full left-0">
-        <a href="index.html" class="button mb-2">Inicio</a>
-        <a href="acerca.html" class="button mb-2">Acerca de</a>
-    </div>
-
     <main class="container mx-auto p-6 mt-24">
         <h2 class="text-2xl font-semibold mb-4">Horario</h2>
-        <div class="overflow-x-auto"> <!-- Contenedor para permitir desplazamiento horizontal -->
-            <table class="min-w-full rounded-lg shadow-md">
-                <thead>
-                    <tr>
-                        <th>Horario</th>
-                        <th>Lunes</th>
-                        <th>Martes</th>
-                        <th>Miércoles</th>
-                        <th>Jueves</th>
-                        <th>Viernes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>8:00 - 9:30</td>
-                        <td>IP (S)<br><span class="aula">Aula 202</span></td>
-                        <td>SN (T)<br><span class="aula">Aula 202</span></td>
-                        <td></td>
-                        <td></td>
-                        <td>ICI (C)<br><span class="aula">Aula 201</span></td>
-                    </tr>
-                    <tr>
-                        <td>9:30 - 11:00</td>
-                        <td>AL (CP)<br><span class="aula">Aula 202</span></td>
-                        <td>IP (CP)<br><span class="aula">Aula 202</span></td>
-                        <td class="highlight">IP (PP)<br><span class="aula">Aula 402</span></td>
-                        <td>SN (T)<br><span class="aula">Aula 202</span></td>
-                        <td>AL (CP)<br><span class="aula">Aula 202</span></td>
-                    </tr>
-                    <tr>
-                        <td>11:00 - 12:30</td>
-                        <td>Reunión de brigada<br><span class="aula">Aula 202</span></td>
-                        <td>MD (C)<br><span class="aula">Aula 201</span></td>
-                        <td>AL (C)<br><span class="aula">Aula 402</span></td>
-                        <td>MD (CP)<br><span class="aula">Aula 202</span></td>
-                        <td>F (C)<br><span class="aula">Aula 210</span></td>
-                    </tr>
-                    <tr>
-                        <td>12:30 - 14:00</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>14:00 - 15:30</td>
-                        <td></td>
-                        <td>EF<br><span class="aula">Gimnasio</span></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <table class="min-w-full rounded-lg shadow-md">
+            <thead>
+                <tr>
+                    <th>Horario</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8:00 - 9:30</td>
+                    <td>IP (S)<br><span class="aula">Aula 202</span></td>
+                    <td>SN (T)<br><span class="aula">Aula 202</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>ICI (C)<br><span class="aula">Aula 201</span></td>
+                </tr>
+                <tr>
+                    <td>9:30 - 11:00</td>
+                    <td>AL (CP)<br><span class="aula">Aula 202</span></td>
+                    <td>IP (CP)<br><span class="aula">Aula 202</span></td>
+                    <td class="highlight">IP (PP)<br><span class="aula">Aula 402</span></td>
+                    <td>SN (T)<br><span class="aula">Aula 202</span></td>
+                    <td>AL (CP)<br><span class="aula">Aula 202</span></td>
+                </tr>
+                <tr>
+                    <td>11:00 - 12:30</td>
+                    <td>Reunión de brigada<br><span class="aula">Aula 202</span></td>
+                    <td>MD (C)<br><span class="aula">Aula 201</span></td>
+                    <td>AL (C)<br><span class="aula">Aula 402</span></td>
+                    <td>MD (CP)<br><span class="aula">Aula 202</span></td>
+                    <td>F (C)<br><span class="aula">Aula 210</span></td>
+                </tr>
+                <tr>
+                    <td>12:30 - 14:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>14:00 - 15:30</td>
+                    <td></td>
+                    <td>EF<br><span class="aula">Gimnasio</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 
     <footer class="shadow mt-8 p-4 text-center">
         <p>&copy; 2024 Grupo FIO 102. Todos los derechos reservados.</p>
     </footer>
-
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 
 </body>
 </html>
