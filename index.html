@@ -17,6 +17,15 @@
             color: #f9fafb;
         }
 
+        .article-title {
+            height: 2.5rem; /* Altura fija para el título */
+            overflow: hidden; /* Ocultar texto que no cabe */
+            text-overflow: ellipsis; /* Agregar puntos suspensivos si es necesario */
+            display: -webkit-box; /* Usar flexbox para el truncado */
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1; /* Número de líneas que se mostrarán */
+        }
+
         a, .button {
             font-family: 'Orbitron', sans-serif;
             color: #00bfff;
@@ -58,7 +67,7 @@
         .custom-nav {
             background-color: rgb(39, 39, 39);
             border-bottom: 1px solid #007acc;
-            padding: 0.5rem; /* Reducir padding */
+            padding: 0.5rem;
         }
 
         .custom-article {
@@ -66,29 +75,59 @@
         }
 
         .logo {
-            width: 4em; /* Ajustar tamaño */
-            height: 4em; /* Ajustar tamaño */
+            width: 4em;
+            height: 4em;
         }
 
         .imgarticle {
             width: 100%;
-            max-width: 30em;
-            height: auto;
+            height: 120px; /* Ajustar altura para recortar menos */
+            object-fit: cover; /* Recorta la imagen */
         }
 
         /* Estilos para el menú hamburguesa */
         .nav-link {
-            display: none; /* Ocultar los enlaces en móvil inicialmente */
+            display: none;
         }
 
         @media (min-width: 640px) {
             .nav-link {
-                display: block; /* Mostrar enlaces en pantallas más grandes */
+                display: block;
             }
             .menu-toggle {
-                display: none; /* Ocultar el botón de menú en pantallas más grandes */
+                display: none;
             }
         }
+
+        /* Estilos del modal */
+        .modal {
+            display: none; /* Ocultar por defecto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(105, 105, 105, 0.2); /* Fondo semi-transparente */
+            backdrop-filter: blur(10px); /* Aplicar desenfoque al fondo */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #2b2b2b;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .modal img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
     </style>
 </head>
 <body>
@@ -98,12 +137,11 @@
             <img src="dragon4.webp" alt="Logo" class="logo">
             <h1 class="cyberpunk-title">Grupo 02</h1>
             <button id="menu-toggle" class="menu-toggle text-blue-500 focus:outline-none md:hidden">
-                <!-- Ícono del menú hamburguesa -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
-            <nav id="navbar" class="flex items-center space-x-2"> <!-- Reducir espacio -->
+            <nav id="navbar" class="flex items-center space-x-2">
                 <a href="horario.html" class="button nav-link">Horario</a>
                 <a href="acerca.html" class="button nav-link">Acerca de</a>
             </nav>
@@ -121,19 +159,17 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                 <article class="custom-article p-4 rounded-lg">
                     <img src="ciclon.jpg" alt="Noticia 1" class="mb-4 rounded-lg mx-auto imgarticle">
-                    <h3 class="font-bold text-lg text-center">Atención</h3>
-                    <p class="text-center">Se emite Nota Informativa No 1 sobre el Sistema de Bajas presiones y se decreta FASE INFORMATIVA.
-                        Se solicita a la población mantenerse informado por los sitios oficiales del Insmet y EMNDC. Proteger la vida es vital
-                        #Cuba
-                        #TemporadaCiclónica2024</p>
+                    <h3 class="article-title font-bold text-lg text-center">Atención: Se emite Nota Informativa No 1 sobre el Sistema de Bajas presiones.</h3>
+                    <p class="text-center"></p>
                     <p class="text-sm mt-2 text-center">Publicado el 3 de noviembre de 2024</p>
+                    <button class="button mt-2" onclick="openModal('ciclon.jpg', 'Se emite Nota Informativa No 1 sobre el Sistema de Bajas presiones y se decreta FASE INFORMATIVA. Se solicita a la población mantenerse informado por los sitios oficiales del Insmet y EMNDC. Proteger la vida es vital #Cuba #TemporadaCiclónica2024')">Ver Más</button>
                 </article>
                 <article class="custom-article p-4 rounded-lg">
                     <img src="c++.svg" alt="Noticia 2" class="mb-4 rounded-lg mx-auto imgarticle">
-                    <h3 class="font-bold text-lg text-center">IP 1 Noticia</h3>
-                    <p class="text-center">Turnos de IP en el horario suspendidos hasta el miércoles debido a la no responsabilidad con sus alumnos del profesor designado. 
-                        Actividad no presencial. El Lunes en el 5to turno se efectuará una Consulta con profesor del grupo 3.</p>
+                    <h3 class="article-title font-bold text-lg text-center">IP 1 Noticia: Turnos de IP en el horario suspendidos hasta el miércoles.</h3>
+                    <p class="text-center"></p>
                     <p class="text-sm mt-2 text-center">Publicado el 03 de noviembre de 2024</p>
+                    <button class="button mt-2" onclick="openModal('c++.svg', 'Turnos de IP en el horario suspendidos hasta el miércoles debido a la no responsabilidad con sus alumnos del profesor designado. Actividad no presencial. El Lunes en el 5to turno se efectuará una Consulta con profesor del grupo 3.')">Ver Más</button>
                 </article>
             </div>
         </section>
@@ -143,12 +179,43 @@
         <p>&copy; 2024 Grupo FIO 102. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-button text-white cursor-pointer">&times;</span>
+            <img id="modal-image" src="" alt="Imagen del artículo">
+            <h3 id="modal-title" class="article-title font-bold text-lg text-center mt-2"></h3>
+            <p id="modal-text" class="text-center mt-2"></p>
+        </div>
+    </div>
+
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const closeModal = document.getElementById('close-modal');
 
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        function openModal(imageSrc, text) {
+            modalImage.src = imageSrc;
+            modalText.innerText = text;
+            modal.style.display = 'flex';
+        }
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
         });
     </script>
 
