@@ -25,8 +25,6 @@
             font-weight: bold;
             text-shadow: 0 0 10px #00bfff44, 0 0 20px #00bfff3b, 0 0 30px #00bfff44, 0 0 40px #007acc33;
             transition: text-shadow 0.3s ease;
-            padding: 8px 12px;
-
         }
 
         a:hover {
@@ -82,6 +80,15 @@
         .aula {
             color: #00bfff;
         }
+
+        /* Hacer que la tabla sea scrollable en pantallas pequeñas */
+        @media (max-width: 768px) {
+            table {
+                overflow-x: auto;
+                display: block;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -92,68 +99,70 @@
             <nav>
                 <a href="index.html" class="mx-2">Inicio</a>
                 <a href="acerca.html" class="mx-2">Acerca de</a>
-                <a href="estudiantes.html" class="button nav-link">Estudiantes</a> <!-- Nueva pestaña añadida -->
-
+                <a href="estudiantes.html" class="button nav-link mx-2">Estudiantes</a> <!-- Nueva pestaña añadida -->
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto p-6 mt-24">
         <h2 class="text-2xl font-semibold mb-4">Horario</h2>
-        <table class="min-w-full rounded-lg shadow-md">
-            <thead>
-                <tr>
-                    <th>Horario</th>
-                    <th>Lunes</th>
-                    <th>Martes</th>
-                    <th>Miércoles</th>
-                    <th>Jueves</th>
-                    <th>Viernes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>8:00 - 9:30</td>
-                    <td>IP (S)<br><span class="aula">Aula 202</span></td>
-                    <td>SN (T)<br><span class="aula">Aula 202</span></td>
-                    <td></td>
-                    <td></td>
-                    <td>ICI (C)<br><span class="aula">Aula 201</span></td>
-                </tr>
-                <tr>
-                    <td>9:30 - 11:00</td>
-                    <td>AL (CP)<br><span class="aula">Aula 202</span></td>
-                    <td>IP (CP)<br><span class="aula">Aula 202</span></td>
-                    <td class="highlight">IP (PP)<br><span class="aula">Aula 402</span></td>
-                    <td>SN (T)<br><span class="aula">Aula 202</span></td>
-                    <td>AL (CP)<br><span class="aula">Aula 202</span></td>
-                </tr>
-                <tr>
-                    <td>11:00 - 12:30</td>
-                    <td>Reunión de brigada<br><span class="aula">Aula 202</span></td>
-                    <td>MD (C)<br><span class="aula">Aula 201</span></td>
-                    <td>AL (C)<br><span class="aula">Aula 402</span></td>
-                    <td>MD (CP)<br><span class="aula">Aula 202</span></td>
-                    <td>F (C)<br><span class="aula">Aula 210</span></td>
-                </tr>
-                <tr>
-                    <td>12:30 - 14:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>14:00 - 15:30</td>
-                    <td></td>
-                    <td>EF<br><span class="aula">Gimnasio</span></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Contenedor para hacer la tabla scrollable en móviles -->
+        <div class="overflow-x-auto">
+            <table class="min-w-full rounded-lg shadow-md">
+                <thead>
+                    <tr>
+                        <th>Horario</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8:00 - 9:30</td>
+                        <td>IP (S)<br><span class="aula">Aula 202</span></td>
+                        <td>SN (T)<br><span class="aula">Aula 202</span></td>
+                        <td></td>
+                        <td></td>
+                        <td>ICI (C)<br><span class="aula">Aula 201</span></td>
+                    </tr>
+                    <tr>
+                        <td>9:30 - 11:00</td>
+                        <td>AL (CP)<br><span class="aula">Aula 202</span></td>
+                        <td>IP (CP)<br><span class="aula">Aula 202</span></td>
+                        <td class="highlight">IP (PP)<br><span class="aula">Aula 402</span></td>
+                        <td>SN (T)<br><span class="aula">Aula 202</span></td>
+                        <td>AL (CP)<br><span class="aula">Aula 202</span></td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 12:30</td>
+                        <td>Reunión de brigada<br><span class="aula">Aula 202</span></td>
+                        <td>MD (C)<br><span class="aula">Aula 201</span></td>
+                        <td>AL (C)<br><span class="aula">Aula 402</span></td>
+                        <td>MD (CP)<br><span class="aula">Aula 202</span></td>
+                        <td>F (C)<br><span class="aula">Aula 210</span></td>
+                    </tr>
+                    <tr>
+                        <td>12:30 - 14:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td></td>
+                        <td>EF<br><span class="aula">Gimnasio</span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <footer class="shadow mt-8 p-4 text-center">
